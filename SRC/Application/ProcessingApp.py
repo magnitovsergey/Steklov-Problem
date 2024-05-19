@@ -76,7 +76,7 @@ class Processor:
         return count == 4
 
     def remove_empty_columns(self):
-        if not self.lines:  # Если список строк пуст, сразу возвращаемся
+        if not self.lines:
             return
         rows = len(self.lines)
         cols = len(self.lines[0])
@@ -86,7 +86,7 @@ class Processor:
             if all(self.lines[row][col] == '0' for row in range(rows)):
                 columns_to_remove.add(col)
 
-        # Перестроение матрицы без пустых столбцов
+       
         for i in range(rows):
             self.lines[i] = [
                 self.lines[i][col] for col in range(cols) if col not in columns_to_remove
